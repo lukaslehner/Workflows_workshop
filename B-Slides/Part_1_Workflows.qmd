@@ -28,7 +28,7 @@ pacman::p_load(tidyverse,
 
 # 👋🇼‌🇪‌🇱‌🇨‌🇴‌🇲‌🇪‌🙋 {.center .r-fit-text background-color="#f3e2b4"}
 
-# First step: Download the slides.
+# First step: Download the slides
 
 - [https://github.com/lukaslehner/Workflows_workshop/blob/main/B-Slides/Part_1_Workflows.html](https://github.com/lukaslehner/Workflows_workshop/blob/main/B-Slides/Part_1_Workflows.html)
 
