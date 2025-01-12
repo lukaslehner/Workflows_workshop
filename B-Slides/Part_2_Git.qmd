@@ -1,0 +1,447 @@
+---
+title: "Tools for Efficient Research Workflows"
+subtitle: "Lukas Lehner"
+date: "UZH 11/14/2024"
+format:
+  revealjs:
+    toc: false
+    number-sections: false
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    chalkboard: false
+    multiplex: true
+    scrollable: true
+    footer: 'Tools for Efficient Research Workflows'
+    smaller: false
+    preview-links: auto
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+pacman::p_load(tidyverse, 
+               countdown)
+```
+
+# Part II: GitHub
+
+
+## Why GitHub? The analogy of climbing
+
+![](figs/github_wickham_bryan_git_quote.png) Source: illustrations by [\@allison_horst](https://twitter.com/allison_horst)
+
+::: notes
+Hadley Wickham and Jenny Bryan use the analogy of climbing to describe how GitHub can keep us safe while also showing our journey.
+:::
+
+## Git
+
+> -   Who has used Git previously? What for?
+> -   Who has used any kind of version control previously?
+
+## Git as Version Control
+
+You all have used version control previously:
+
+-   "Save early, save often".
+-   Easiest version control: the back-button.
+-   "Track-changes" in MS Word is a rudimentary form of version control.
+
+ 
+
+Git is a sophisticated form of version control.
+Git...
+
+-   ... maintains a single, updated version of each file.
+-   ... keeps a record of all previous versions.
+-   ... keeps a record of exact changes between the versions.
+-   ... collaborators can work simultaneously.
+-   ... documents who made changes, when and why.
+
+## Why should I learn yet another tool? {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width="60%", fig.cap=""}
+knitr::include_graphics("figs/Comic_version_control.gif")
+```
+
+## Why should I learn yet another tool? Git as Version Control
+
+> -   Maintain an overview
+> -   Access previous versions
+
+ 
+
+> -   Strengthen Collaboration
+> -   Foster Transparency
+
+
+## Git: a preview
+
+![](figs/git_workflow.png){width="20%"}
+
+
+
+## Git: Terminiology (1): pillars {.smaller}
+
+-   **repository (repo)**
+-   **commit**
+-   **diff**
+
+ 
+
+-   **branch**
+-   **remote**
+-   **local**
+-   **commit message and tag**
+-   **gist**
+-   **README**
+
+::: notes
+1)  Explain to your neighbor
+
+2)  Collect responses from class
+
+3)  Clarify
+:::
+
+## Git: Terminiology (1): pillars {.smaller}
+
+-   **repository (repo):** directory of files
+-   **commit:** snapshot of directory
+-   **diff:** difference between two commits
+
+ 
+
+-   **branch:** detour from main stream without changing main stream
+-   **remote:** repo hosted online
+-   **local:** repo on your hard drive (offline)
+-   **commit message and tag:** notes assigned to commits
+-   **gist:** small repo to share one code file
+-   **README:** "About me" section of your repository or your GitHub profile
+
+::: notes
+A repository is a project containing files and folders.
+A repository tracks versions of files and folders.
+
+A branch is a parallel version of your repository.
+By default, your repository has one branch named main and it is considered to be the definitive branch.
+You can create additional branches off of main in your repository.
+You can use branches to have different versions of a project at one time.
+
+On additional branches, you can make edits without impacting the main version.
+Branches allow you to separate your work from the main branch.
+In other words, everyone's work is safe while you contribute.
+
+A profile README is essentially an "About me" section on your GitHub profile where you can share information about yourself with the community on GitHub.com.
+GitHub shows your profile README at the top of your profile page.
+:::
+
+
+## Git: Terminiology (2): actions {.smaller}
+
+-   **to commit**
+-   **to merge**
+-   **to fork**
+-   **to clone**
+-   **to push**
+-   **to pull**
+
+::: notes
+1)  Explain to your neighbour
+
+2)  Collect responses from class
+
+3)  Clarify
+:::
+
+## Git: Terminiology (2): actions {.smaller}
+
+-   **to commit:** create a commit
+-   **to merge:** merge on branch into another branch
+-   **to fork:** create a copy of someone else's repo in your GitHub account
+-   **to clone:** create your local copy of the repo
+-   **to push:** upload changes from your local to your remote
+-   **to pull:** update local from remote
+
+::: notes
+:::
+
+
+
+## Publishing Code > README.md
+
+Add a "Usage" and "Contributing" section to your README.md
+
+- Add a sentence or two on the **WHY** of the project
+- Add a section "Usage" on how to install/use your project
+- Have a simple and short code example showcasing how to use the project
+- Explain the basic project structure
+
+## Publishing Code > Add a License {.smaller}
+
+- **MIT**
+  - pro: easy to understand and use
+  - con: organisations and individuals can use your code without contributing back
+- **GPLv3**
+  - pro: organisations and individuals have to contribute back to the project when your code is used in public projects
+  - con: not as easy, some organisation do not want to use software they need to contribute back to
+- **Creative Commons**
+  - pro: Allows you to customize non-commercial or commercial usage and whether it can be used without or with attribution
+  - con: the many version lead to most people not knowing them and ignoring the license
+
+
+
+## GitHub Desktop: Getting started
+
+-   Install and use [GitHub Desktop](https://desktop.github.com/) (especially for beginners)
+
+![](figs/GitHub_desktop_1.PNG){width="80%"}
+
+## GitHub Desktop: track version history
+
+![](figs/GitHub_desktop_2.PNG){width="80%"}
+
+
+
+
+
+## Forking and working on your own repo: exercise 1
+
+[https://github.com/lukaslehner/Zurich_2024_workflows_workshop/tree/main](https://github.com/lukaslehner/Zurich_2024_workflows_workshop/tree/main)
+
+## Collaborating on the same repo: exercise 2
+
+[https://github.com/lukaslehner/Zurich_2024_workflows_training](https://github.com/lukaslehner/Zurich_2024_workflows_training)
+
+## Two common errors
+
+-   *Push rejected.* This can happen if you have changes on the remote and on your local repo.
+    \> - *Solution:* Pull first.
+    Resolve the conflict.
+    Then try your push again.
+
+-   *fatal: not a git repository.* The command cannot be executed because the current directory is not a Git directory.
+    \> - *Solution:* initialize the repo or change directory to the repo
+
+## Some advice before we practice
+
+-   Commit early and often.
+
+-   Push to your remote on GitHub often (but not as often as you commit).
+
+-   Establish a naming convention for commits.
+
+-   Use tags to mark key steps.
+
+-   Fork and clone from foreign repos (instead of "just cloning")
+
+-   Branch of your development version, especially in teams.
+
+
+## Further Resources
+
+-   [Happy Git](https://happygitwithr.com/) intro for data science
+
+-   [GitHub Skills](https://skills.github.com/) *replaced [GitHub Learning Lab](https://lab.github.com/) from 1 Sept 2022.*
+
+-   GitHub pro is free for students (Sign up for [GitHub Student Developer Pack](https://education.github.com/pack#offers)).
+
+-   [GitHub Teacher Toolbox](https://education.github.com/teachers) is free for course instructors.
+
+-   [Code and Data for the Social Sciences: A Practitioner's Guide](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf) by Matthew Gentzkow and Jesse M. Shapiro.
+
+::: notes
+-   [1h Introduction](https://lab.github.com/githubtraining/introduction-to-github)
+
+-   [Oxford ReproducibiliTea](https://reproducibilitea.org/)
+
+-   [Berkeley Initiative for Transparency in the Social Sciences](https://www.bitss.org/)
+:::
+
+
+## Readings with further information
+
+  -   Bryan. 2018. Excuse Me, Do You Have a Moment to Talk About Version Control? The American Statistician, 72(1), 20-27. <https://doi.org/10.1080/00031305.2017.1399928>
+  -   Turner et al. 2020. Open Code and Software: a Primer from UKRN. <https://doi.org/10.31219/osf.io/qw9ck>
+  -   Git and GitHub for R. <https://happygitwithr.com/>
+   -   Brailey. 2022. Using GitHub and Rstudio. <https://osf.io/dgw2s/>
+
+
+## Bonus: Dealing with pull requests and merge conflicts
+
+-  [Review pull requests](https://github.com/skills/review-pull-requests)
+
+-  [Resolve merge conflicts](https://github.com/skills/resolve-merge-conflicts)
+
+## Git basics
+
+Generally, git operates through a shell.
+*(Later on, we will install a GUI can make life easier.)*
+
+### What is a shell?
+
+::: fragment
+A shell (or terminal) is a program on your computer whose job is to run other programs, rather than do calculations itself.
+
+Let's start open the shell in In RStudio: *Tools \> Shell*.
+
+A note for Windows users: the default Windows shell does not support git commands.
+However, we can solve this by installing *GitBash* - a light shell that does support git commands.
+:::
+
+::: note
+Basic shell commands: <https://cfss.uchicago.edu/setup/shell/>
+:::
+
+
+## Git: Terminiology (3): tools
+
+**Git** is the command line version control system (VCS) software, which works on your local computer.
+
+**GitHub** is an internet hosting service for git repositories.
+
+**GitHub Desktop** is an application that enables you to interact with GitHub using a GUI instead of the command line or a web browser.
+
+::: notes
+**Git** is the command line version control system (VCS) software, which works on your local computer.
+Git was created in 2005 for development of the Linux kernel.
+
+**GitHub** is an internet hosting service for git repositories.
+Public repos are free; private repos are paid (except for pro version).
+As a shared space for repos, it allows you to do collaborative work.
+There are many other git hosting services, such as GitLab or Bitbucket.
+You need Git to use GitHub but you can use Git locally without GitHub.
+
+**GitHub Desktop** is an application that enables you to interact with GitHub using a GUI instead of the command line or a web browser.
+There are many other git GUI applications, such as GitKraken or Sourcetree.
+You need GitHub (or another Git hosting service) to use GitHub Desktop but you can use GitHub without GitHub Desktop using commands.
+
+However: use Git only for small files.
+If you have to store a large data file in your repo, you can use Git Large File Storage but it is not for free.
+It is a separate program you need to install via the shell.
+:::
+
+
+
+
+
+
+# Bonus: Reproducible research
+
+## Reproducibility vs. replication? 🤔 {.smaller}
+
+Replicability refers to situations in which a researcher obtains [new data to reach the same scientific conclusions as a previous study](https://www.sciencedirect.com/science/article/pii/S0022103113001819), whereas reproducibility refers to situations in which the original researcher's software, code, and data are used to regenerate the results. 
+
+. . .
+
+✅ **Replication standards**: guidelines, protocols, and software designed to help researchers *share, analyze, archive, preserve, distribute, catalog, translate, verify, and replicate* scholarly research data and analyses across disciplines. Includes proposals to improve the norms around data sharing and replication in scientific research. 
+
+. . .
+
+✅ **(Computational) reproducibility**: [Obtaining consistent results using the same input data, computational methods, and conditions of analysis](http://www.edge.org/response-detail/25340). [Code re-execution is a necessary, but not sufficient requirement for computational reproducibility](https://www.nature.com/articles/s41597-022-01143-6)
+
+
+## What hinders reproducible research and what can facilitate it? {.smaller}
+
+<br>
+
+:::: {.columns}
+
+:::{.incremental .column width="50%"}
+
+### Obstacles 🚧
+
+- Infrastructure and research habits
+- Hardware requirements
+- Operating systems
+- Versions of software and libraries 
+
+:::
+
+
+
+:::{.incremental .column width="50%"}
+
+### Solutions ✨
+
+- Optimised workflows (integrating coding, authoring, version control)
+- Virtual machines for computationally intense analyses
+- Containerisation 
+
+:::
+
+::::
+
+
+
+## Why Open Data? {.smaller}
+
+:::{.fragment}
+### Efficiency 🏇
+
+Science is not built upon blind trust, but on verifiability. Science as "organized skepticism" (Merton, 1947). Only when raw data and other research material is shared such organized skepticism can be implemented, and science can self-correct. One aspect of good scientific practice is **Open Data**. 
+
+:::
+
+
+:::{.fragment}
+
+### Data persistence 👴
+
+Reliable infrastructure for storage and publication (e.g., [subject-specific repositories](re3data.org), institutional repositories) 
+
+:::
+
+
+:::{.fragment}
+
+### [Funding requirements](https://www.topfactor.org/journals?factor=Data+Transparency&disciplines=Political+Science&perPage=100) 👮
+
+Plan S principle: "from 2021, scientific publications that result from research funded by public grants must be published in compliant Open Access journals or platforms." (Sherpa Romeo database; fairsharing.org)
+
+:::
+
+
+
+<!-- 
+- Additional Tipps
+  - `>>`, `&&`, `;`, `|`
+
+## Windows Powershell
+
+- When to run as administrator
+  - To install global software
+- copy & paste
+  - Right Click
+  - `CTRL+C` & `CTRL+V` depends on enviroment
+- abort a command
+  - `CTRL+C`
+
+## Terminal
+
+- When to use sudo
+  - To install global software
+- copy & paste
+  - `CTRL+C` & `CTRL+V
+  - `CTRL+Shift+C`+CTRL+Shift+V`
+- abort a command
+  - `CTRL+C` Kill a process
+  - `CTRL+Z` Pause a process
+  
+## Programming Paradigms
+
+- **Object Oriented**: Java, C#
+- **Procedual**: C, Pascal
+- **Multi Paradigm**: Python, R
+- **Functional**: Clojure, Haskell
+- **Reactive**: React, Vue
+
+-->
+
+
+
+
+
