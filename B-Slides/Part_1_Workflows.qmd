@@ -1,0 +1,268 @@
+---
+title: "Research Workflows"
+subtitle: "Lukas Lehner<br>PGR Seminar"
+date: "2025-01-15"
+format:
+  revealjs:
+    toc: false
+    number-sections: false
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    chalkboard: false
+    multiplex: true
+    scrollable: true
+    footer: 'Research Workflows'
+    smaller: false
+    preview-links: auto
+    css: styles.css
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+pacman::p_load(tidyverse, 
+               countdown)
+```
+
+# 👋🇼‌🇪‌🇱‌🇨‌🇴‌🇲‌🇪‌🙋 {.center .r-fit-text background-color="#f3e2b4"}
+
+# First step: Download the slides.
+
+- [https://github.com/lukaslehner/Workflows_workshop/blob/main/B-Slides/Part_1_Workflows.html](https://github.com/lukaslehner/Workflows_workshop/blob/main/B-Slides/Part_1_Workflows.html)
+
+# Part I: General tools and workflow management
+
+## Why should you care about your research workflow? {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width="60%", fig.cap=""}
+knitr::include_graphics("figs/Comic_version_control.gif")
+```
+
+## Why should I learn yet another tool?
+
+> -   Maintain an overview
+> -   Access previous versions
+
+ 
+
+> -   Strengthen Collaboration
+> -   Foster Transparency
+
+## Why should you care about reproducible research?
+
+🙌 Benefits yourself!
+🙌
+
+['Create a better relationship with your future self'](https://www.researchgate.net/publication/313590561_How_to_improve_your_relationship_with_your_future_self)
+
+. . .
+
+![](./figs/reproducibilitytweet.png){width="70%"}
+
+## Why should you care about reproducible research?
+
+🚀 That's the future of the social sciences!
+🚀
+
+. . .
+
+-   Journals and funding agency requirements
+
+-   Open science and data sharing
+
+-   Easier collaboration and smoother workflows
+
+
+
+## Literate Programming {.smallest}
+
+:::{.fragment}
+### Communication via code 🗣️💻
+Integrate computer code with software documentation in a single document
+
+
+:::
+
+:::{.fragment}
+
+### Minimal requirements of high-quality code? 👆  
+- executes what it supposed to execute   
+- runs, no defects or problems, and runs not only under some circumstances  
+- easy to read, maintain, and extend  
+
+:::
+
+# Folder structure: example
+
+- [https://github.com/lukaslehner/Workflows_workshop/blob/main/D-Paper_folder.zip](https://github.com/lukaslehner/Workflows_workshop/blob/main/D-Paper_folder.zip)
+
+# Naming conventions
+
+- `snake_case`
+- `camelCase`
+
+# Relativ paths
+
+- do not set a working directory (or only globally, at the very beginning of a script) → documents should be **self-contained and portable**
+
+- relative paths: `read.csv('./data/foo.csv')`
+
+## How to design a well structured project directory? {.smallest .scrollable}
+
+- use a naming convention that is...
+    + **human readable**: directory names that are easy to understand for you & someone not familiar with the naming convention
+    + **machine readable**: avoid spaces
+    + **supports sorting**: sort list of input files   
+    
+. . .
+
+- directory names that contain components of the project and can be referenced in the code (e.g. `figs`, `data`, etc.)
+
+```
+- ./data
+    + `raw_data.csv`
+    + `tidy_data.csv`
+    + `codebook.txt`
+- ./analysis
+- ./figures
+    + ./interaction_plot.png
+    + ./bar_plot.png
+- ./paper
+- ./presentation
+- ./README.md
+```
+
+
+# Tools
+
+# Overleaf
+
+- [https://github.com/lukaslehner/Workflows_workshop/blob/main/E-Overleaf_paper_template.zip](https://github.com/lukaslehner/Workflows_workshop/blob/main/E-Overleaf_paper_template.zip)
+
+# Zotero
+
+# Note taking: md, Rmd, Qmd, ...
+
+## Executible reports: Markdown, RMarkdown, and Quarto {.smaller}
+
+::: incremental
+-   [Markdown](https://guides.github.com/features/mastering-markdown/#what) as a human readable way to style text
+
+-   "Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)." [John Gruber, founder of Markdown](https://daringfireball.net/)
+
+-   R and RStudio (not the single [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) that supports RMarkdown, Visual Studio is also a great choice)
+
+-   RMarkdown integrates R code into Markdown language through `knitr`
+
+-   Quarto: extension of RMarkdown, optimised for language interoperability & CLI
+
+-   Obsidian provides a neat user interface and search for Rmd
+:::
+
+## Veracrypt
+
+-   Container in Veracrypt =/ Container in Docker
+
+-   Creates a virtual encrypted disk within a folder
+
+-   Encrypts a storage device such as a USB or hard drive.
+
+-   Several encryption options
+
+## Other encryption tools
+
+::: fragment
+-   Veracrypt
+-   7-Zip
+-   Bitlocker (Windows)
+-   FileVault (Mac)
+-   LastPass
+:::
+
+# Package managers
+
+-   homebrew (brew)
+-   Chocolatey (choco)
+-   Anaconda (conda)
+
+## Data Repositories
+
+-   [Harvard Dataverse](https://dataverse.harvard.edu/)
+
+-   [Open Science Framework (OSF)](https://osf.io/)
+
+-   [Figshare](https://figshare.com/)
+
+-   [Zenodo](https://zenodo.org/)
+
+::: fragment
+-   =/ pre-analysis plan registries
+    -   <https://www.socialscienceregistry.org/>
+    -   <https://egap.org/>
+-   =/ [registered reports](https://www.cos.io/initiatives/registered-reports)
+:::
+
+## Preprint Repositories
+
+-   [OSF Preprints](https://osf.io/preprints/)
+
+-   [SocArXive](https://osf.io/preprints/socarxiv)
+
+-   [APSA Preprints](https://preprints.apsanet.org/)
+
+-   [RePEc: Research Papers in Economics](http://repec.org/)
+
+-   [SSRN: Social Science Research Network](https://www.ssrn.com/index.cfm/en/)
+
+-   [ArXive](https://arxiv.org/)
+
+-   [Figshare](https://figshare.com/)
+
+## General productivity tools
+
+-   [Slack](https://slack.com/) for communication
+    -   or Discord, (a more sophisticated version of MS Teams), ...
+-   [Trello](https://trello.com/en) for managing your tasks
+    -   or Evernote, (a more sophisticated version of Google Keeps), ...
+-   ([Asana](https://asana.com/) for collaboration larger teams)
+    -   or Wrike, Jira,...
+
+## Command Line
+
+## Command Line
+
+- Savety is important!
+- Simple Commands can do a lot of damage`rm -rf /`
+
+- arrow keys
+  - Up + Down select previously executed Commands
+  
+- cd
+  - Change Directory
+  - Relative: `cd ..\documents`
+  - Absolute: `cd C:\ProgramData`
+  
+- rm
+  - `rm file.md`
+  - `rm -r ./directory`
+  
+- mv
+  - Move
+  - `mv ./oldfilename.md ./newfilename.md`
+
+- cat
+  - Show contents of file
+  - `cat file.md`
+  
+- ls
+  - List directory contents
+  - `ls`
+
+- pwd
+  - Show current directory
+
+ # All material
+
+- [https://github.com/lukaslehner/Workflows_workshop](https://github.com/lukaslehner/Workflows_workshop)
